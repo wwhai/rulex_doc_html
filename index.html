@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    <title>RuleX Document | RuleX </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/rulex_doc_html/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/rulex_doc_html/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"RuleX","support":false,"path":"index.html"},"data":{"navigation":{"logo":{"text":"RuleX 参考文档","type":"link","path":"index.html"},"main":[{"text":"🧱版本发布","type":"link","path":"docs/release.html"},{"text":"🚟构建编译","type":"link","path":"docs/build.html"},{"text":"📲开发指南","type":"link","path":"docs/dev.html"},{"text":"⛹️‍♀️用户指南","type":"link","path":"docs/user_guide.html"},{"text":"⚔️HTTP API","type":"link","path":"docs/restapi.html"},{"text":"✂️使用案例","type":"link","path":"docs/example.html"},{"text":"💖Rulex网关","type":"link","path":"docs/rulex_gw.html"}]}},"config":{"timezone":"UTC","root":"/rulex_doc_html/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/images/favicon.ico","google_analytics":"","support":{"navigation":true,"navigation_label":"🍓支持和反馈","link_text":"🍰提出Issue","link_url":"https://github.com/wwhai/rulex/issues/new"}}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/rulex_doc_html/index.html" class="doc-navbar__logo"><img src="/rulex_doc_html/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">RuleX 参考文档</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"><li class="doc-sidebar-list__item doc-sidebar-list__item--label"><span class>🍓支持和反馈</span></li><li class="doc-sidebar-list__item doc-sidebar-list__item--link"><a class href="https://github.com/wwhai/rulex/issues/new" target="_blank"><span>🍰提出Issue</span></a></li></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <div style="text-align:center;">
+ <h1>RuleX: 轻量级物联网数据处理引擎</h1>
+</div>
+
+<div style="text-align:center;">
+    <img src="images/atomic-logo.gif" width="400" alt="IMG">
+</div>
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>RuleX 是一个轻量级规则引擎,主要用来中转上游数据和吐出数据到目标点，可以理解为一个数据路由器。主要被设计用来做物联网网关或者服务端存在数据筛选的场景。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>规则引擎本质上是个流处理器，数据被视为流，然后经过规则引擎后，被层层处理，最后交给回调函数处理,基础架构图如图所示:</p>
+<div style="text-align:center;">
+    <img style="box-shadow: 10px 10px 10px rgba(0,0,0,.5);-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);" src="images/structure.png" width="1000" alt="IMG">
+</div>
+
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>可用在灵活多变的数据处理场景下的嵌入式物联网网关，或者是服务器端。</p>
+<div style="text-align:center;">
+    <img style="box-shadow: 10px 10px 10px rgba(0,0,0,.5);-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);" src="images/scence.png" width="1000" alt="IMG">
+</div>
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="数据入口"><a href="#数据入口" class="headerlink" title="数据入口"></a>数据入口</h3><ul>
+<li>[X] MQTT 数据入口</li>
+<li>[ ] HTTP 数据入口</li>
+<li>[ ] COAP 数据入口</li>
+<li>[ ] UDP 数据入口</li>
+<li>[ ] GRPC 数据入口</li>
+<li>[ ] 串口输入</li>
+<li>[ ] CAN 输入</li>
+<li>[ ] ModBUS输入</li>
+</ul>
+<h3 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a>特色功能</h3><ul>
+<li>LUA 自定义业务逻辑脚本支持</li>
+<li>JQ Select 支持用Jq来做字段筛选</li>
+</ul>
+<h3 id="数据出口"><a href="#数据出口" class="headerlink" title="数据出口"></a>数据出口</h3><ul>
+<li>[X] 数据持久化到 MongoDB</li>
+<li>[ ] 数据持久化到 Redis</li>
+<li>[ ] 数据持久化到 Mysql</li>
+<li>[ ] 数据转发 Kafka</li>
+<li>[ ] 数据转发 ActiveMQ</li>
+</ul>
+<h3 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h3><p>规则引擎提供了插件机制，用户可自己编写插件来进行扩展应用功能，比如 RuleX的 dashboard 插件.</p>
+<hr>
+<h2 id="社区"><a href="#社区" class="headerlink" title="社区"></a>社区</h2><ul>
+<li>QQ群: 475512169</li>
+<li>邮箱: <a href="mailto:cnwwhai@gmail.com" target="_blank" rel="noopener">cnwwhai@gmail.com</a>; <a href="mailto:751957846@qq.com" target="_blank" rel="noopener">751957846@qq.com</a></li>
+<li>微信: bignullnull</li>
+</ul>
+<hr>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/rulex_doc_html/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

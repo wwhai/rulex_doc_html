@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    <title>RuleX Document | HTTP API </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/rulex_doc_html/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/rulex_doc_html/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"HTTP API","support":false,"path":"docs/restapi.html"},"data":{"navigation":{"logo":{"text":"RuleX 参考文档","type":"link","path":"index.html"},"main":[{"text":"🧱版本发布","type":"link","path":"docs/release.html"},{"text":"🚟构建编译","type":"link","path":"docs/build.html"},{"text":"📲开发指南","type":"link","path":"docs/dev.html"},{"text":"⛹️‍♀️用户指南","type":"link","path":"docs/user_guide.html"},{"text":"⚔️HTTP API","type":"link","path":"docs/restapi.html"},{"text":"✂️使用案例","type":"link","path":"docs/example.html"},{"text":"💖Rulex网关","type":"link","path":"docs/rulex_gw.html"}]}},"config":{"timezone":"UTC","root":"/rulex_doc_html/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/images/favicon.ico","google_analytics":"","support":{"navigation":true,"navigation_label":"🍓支持和反馈","link_text":"🍰提出Issue","link_url":"https://github.com/wwhai/rulex/issues/new"}}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/rulex_doc_html/index.html" class="doc-navbar__logo"><img src="/rulex_doc_html/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">RuleX 参考文档</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"><li class="doc-sidebar-list__item doc-sidebar-list__item--label"><span class>🍓支持和反馈</span></li><li class="doc-sidebar-list__item doc-sidebar-list__item--link"><a class href="https://github.com/wwhai/rulex/issues/new" target="_blank"><span>🍰提出Issue</span></a></li></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h2 id="RuleX-基础-HTTP-API"><a href="#RuleX-基础-HTTP-API" class="headerlink" title="RuleX 基础 HTTP API"></a>RuleX 基础 HTTP API</h2><p>RuleX 本身是个框架，不包含 HTTP 接口，但是支持插件扩展，下面这些 HTTP API 就是通过 <code>HttpApiServer</code> 插件实现的。</p>
+<h3 id="系统数据"><a href="#系统数据" class="headerlink" title="系统数据"></a>系统数据</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/system<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"arch"</span>: <span class="string">"amd64"</span>,</span><br><span class="line">  <span class="attr">"cpuPercent"</span>: <span class="number">3.8053649407883903</span>,</span><br><span class="line">  <span class="attr">"cpus"</span>: <span class="number">16</span>,</span><br><span class="line">  <span class="attr">"diskInfo"</span>: <span class="number">7.107930010513884</span>,</span><br><span class="line">  <span class="attr">"memInfo"</span>: <span class="number">66.0473108291626</span>,</span><br><span class="line">  <span class="attr">"os"</span>: <span class="string">"darwin"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="统计数据"><a href="#统计数据" class="headerlink" title="统计数据"></a>统计数据</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/statistic<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"statistics"</span>: &#123;</span><br><span class="line">    <span class="attr">"inFailed"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"inSuccess"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"outFailed"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"outSuccess"</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="数据入口"><a href="#数据入口" class="headerlink" title="数据入口"></a>数据入口</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/inends</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"inends"</span>: &#123;</span><br><span class="line">    <span class="attr">"INEND1"</span>: &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"INEND1"</span>,</span><br><span class="line">      <span class="attr">"state"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"MQTT"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"MQTT Stream"</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">"MQTT Input Stream"</span>,</span><br><span class="line">      <span class="attr">"config"</span>: &#123;</span><br><span class="line">        <span class="attr">"clientId"</span>: <span class="string">"test"</span>,</span><br><span class="line">        <span class="attr">"password"</span>: <span class="string">"test"</span>,</span><br><span class="line">        <span class="attr">"port"</span>: <span class="number">1883</span>,</span><br><span class="line">        <span class="attr">"server"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">        <span class="attr">"username"</span>: <span class="string">"test"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"INEND2"</span>: &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"INEND2"</span>,</span><br><span class="line">      <span class="attr">"state"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"COAP"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"COAP Stream"</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">"COAP Input Stream"</span>,</span><br><span class="line">      <span class="attr">"config"</span>: &#123;</span><br><span class="line">        <span class="attr">"port"</span>: <span class="number">1883</span>,</span><br><span class="line">        <span class="attr">"server"</span>: <span class="string">"127.0.0.1"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据出口"><a href="#数据出口" class="headerlink" title="数据出口"></a>数据出口</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/outends</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"outends"</span>: &#123;</span><br><span class="line">    <span class="attr">"MongoDB001"</span>: &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"MongoDB001"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"mongo"</span>,</span><br><span class="line">      <span class="attr">"state"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Data to mongodb"</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">"Save data to mongodb"</span>,</span><br><span class="line">      <span class="attr">"config"</span>: &#123;</span><br><span class="line">        <span class="attr">"mongourl"</span>: <span class="string">"mongodb+srv://rulenginex:rulenginex@cluster0.rsdmb.mongodb.net/test"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="规则列表"><a href="#规则列表" class="headerlink" title="规则列表"></a>规则列表</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/rules<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"rules"</span>: &#123;</span><br><span class="line">    <span class="attr">"just_a_test_rule"</span>: &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"just_a_test_rule"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"just_a_test_rule"</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">"just_a_test_rule"</span>,</span><br><span class="line">      <span class="attr">"from"</span>: [</span><br><span class="line">        <span class="string">"INEND1"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"actions"</span>: <span class="string">"\nlocal json = require(\"json\")\nActions = &#123;\n\tfunction(data)\n\t    dataToMongo(\"MongoDB001\", data)\n\t    print(\"[LUA Actions Callback]:dataToMongo Mqtt payload:\", data)\n\t\treturn true, data\n\tend\n&#125;\n"</span>,</span><br><span class="line">      <span class="attr">"success"</span>: <span class="string">"\nfunction Success()\n  -- print(\"[LUA Callback] call success from lua\")\nend\n"</span>,</span><br><span class="line">      <span class="attr">"failed"</span>: <span class="string">"\nfunction Failed(error)\n  -- print(\"[LUA Callback] call failed from lua:\", error)\nend\n"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h3><ul>
+<li>curl 127.0.0.1:2580/api/v1/plugins</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"plugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"HttpApiServer"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"HttpApiServer"</span>,</span><br><span class="line">      <span class="attr">"version"</span>: <span class="string">"0.0.1"</span>,</span><br><span class="line">      <span class="attr">"homepage"</span>: <span class="string">"www.ezlinker.cn"</span>,</span><br><span class="line">      <span class="attr">"helpLink"</span>: <span class="string">"www.ezlinker.cn"</span>,</span><br><span class="line">      <span class="attr">"author"</span>: <span class="string">"wwhai"</span>,</span><br><span class="line">      <span class="attr">"email"</span>: <span class="string">"cnwwhai@gmail.com"</span>,</span><br><span class="line">      <span class="attr">"license"</span>: <span class="string">"MIT"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>因为接口不是本规则引擎的核心功能，所以仅仅做了几个基础数据查看接口，后期随着版本迭代会逐步完善起来。</p>
+</blockquote>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/rulex_doc_html/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

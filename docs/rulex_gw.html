@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    <title>RuleX Document | RuleX 边缘规则引擎 </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/rulex_doc_html/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/rulex_doc_html/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"RuleX 边缘规则引擎","support":false,"path":"docs/rulex_gw.html"},"data":{"navigation":{"logo":{"text":"RuleX 参考文档","type":"link","path":"index.html"},"main":[{"text":"🧱版本发布","type":"link","path":"docs/release.html"},{"text":"🚟构建编译","type":"link","path":"docs/build.html"},{"text":"📲开发指南","type":"link","path":"docs/dev.html"},{"text":"⛹️‍♀️用户指南","type":"link","path":"docs/user_guide.html"},{"text":"⚔️HTTP API","type":"link","path":"docs/restapi.html"},{"text":"✂️使用案例","type":"link","path":"docs/example.html"},{"text":"💖Rulex网关","type":"link","path":"docs/rulex_gw.html"}]}},"config":{"timezone":"UTC","root":"/rulex_doc_html/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/images/favicon.ico","google_analytics":"","support":{"navigation":true,"navigation_label":"🍓支持和反馈","link_text":"🍰提出Issue","link_url":"https://github.com/wwhai/rulex/issues/new"}}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/rulex_doc_html/index.html" class="doc-navbar__logo"><img src="/rulex_doc_html/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">RuleX 参考文档</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"><li class="doc-sidebar-list__item doc-sidebar-list__item--label"><span class>🍓支持和反馈</span></li><li class="doc-sidebar-list__item doc-sidebar-list__item--link"><a class href="https://github.com/wwhai/rulex/issues/new" target="_blank"><span>🍰提出Issue</span></a></li></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h2 id="RuleX-Gateway-简介"><a href="#RuleX-Gateway-简介" class="headerlink" title="RuleX Gateway 简介"></a>RuleX Gateway 简介</h2><p>​        RuleX Gateway 是Atomic团队专门为 Atomic+Rulex 定制的一款实体设备。采用RK3399六核（A72x2+A53x4）64位处理器，主频高达1.8GHz，集成四核Mali-T864 GPU，性能优异。板载M.2 PCIe 、4G LTE扩展接口、多种显示接口和通信串口。支持Android/Linux/Ubuntu系统，开放源代码方便企业二次开发。适用于带高清显示的商显广告机、自动售货机、教育终端等，可降低研发门槛，加速产品研发周期。</p>
+<h2 id="网关架构"><a href="#网关架构" class="headerlink" title="网关架构"></a>网关架构</h2><div>
+    <img src="../images/gw_1.png" width="800" alt="IMG">
+</div>
+
+<h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><ul>
+<li>支持机器训练模型</li>
+<li>支持数据流规则引擎</li>
+<li>支持多协议数据接入</li>
+<li>支持多协议数据中转</li>
+<li>支持扩展开发</li>
+</ul>
+<h2 id="网关参数"><a href="#网关参数" class="headerlink" title="网关参数"></a>网关参数</h2><p>网关主板采用 RK3399芯片：</p>
+<div>
+    <img src="../images/3399.png" width="800" alt="IMG">
+</div>
+
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>RK3399 6核 12线程，1.8GHz</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Mali-T860 GPU, OpenGL ES1.1/2.0/3.0/3.1, OpenCL； Supports AFBC (ARM Frame Buffer Compression)</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>8GB</td>
+</tr>
+<tr>
+<td>硬盘</td>
+<td>64GB</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>18个GPIO，其中有两组 UART，一个SPI，一个IIC</td>
+</tr>
+<tr>
+<td>其他IO</td>
+<td>支持USB，RJ45 千兆网口</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>更多关于RK3399的参数: <a href="https://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html" target="_blank" rel="noopener">https://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html</a></p>
+</blockquote>
+<h2 id="实体价格"><a href="#实体价格" class="headerlink" title="实体价格"></a>实体价格</h2><h2 id="高配"><a href="#高配" class="headerlink" title="高配"></a>高配</h2><p>单个售价：<code>￥3999</code></p>
+<h2 id="中配"><a href="#中配" class="headerlink" title="中配"></a>中配</h2><p>单个售价：<code>￥2999</code></p>
+<h2 id="低配"><a href="#低配" class="headerlink" title="低配"></a>低配</h2><p>单个售价：<code>￥999</code></p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/rulex_doc_html/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
